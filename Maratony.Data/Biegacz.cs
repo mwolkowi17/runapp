@@ -17,5 +17,7 @@ namespace Maratony.Data
 
         public Zawody Bieg { get; set; }
 
+
+
     }
 }

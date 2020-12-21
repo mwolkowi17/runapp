@@ -17,5 +17,6 @@ namespace Maratony.Data
 
         public List<Biegacz> Biegacze { get; set; }
 
+
     }
 }
