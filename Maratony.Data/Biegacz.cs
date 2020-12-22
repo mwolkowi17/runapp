@@ -7,6 +7,13 @@ namespace Maratony.Data
 {
     public class Biegacz
     {
+        private static long nextId = 0;
+        public Biegacz()
+        {
+            this.ID = System.Threading.Interlocked.Increment(ref nextId);
+        }
+
+
         public string Imie { get; set; }
 
         public string Nazwisko { get; set; }

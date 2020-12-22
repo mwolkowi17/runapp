@@ -7,6 +7,14 @@ namespace Maratony.Data
 {
     public class Zawody
     {
+        private static long nextId = 0;
+        public Zawody()
+        {
+            this.ID = System.Threading.Interlocked.Increment(ref nextId);
+            Biegacze = new List<Biegacz>();
+        }
+
+
         public string Miejsce { get; set; }
 
         public DateTime Data { get; set; }
