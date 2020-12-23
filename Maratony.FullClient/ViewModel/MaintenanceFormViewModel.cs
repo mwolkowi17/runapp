@@ -13,6 +13,50 @@ namespace Maratony.UI.ViewModel
         private MaratonyModel model = new MaratonyModel();
 
         private IEnumerable<Zawody> zawody;
+        private Zawody wybraneZawody;
+        public Zawody WybraneZawody
+        {
+            get
+            {
+                return this.wybraneZawody;
+            }
+            set
+            {
+                this.wybraneZawody = value;
+                this.OnPropertyChanged();
+                this.OdswiezBiegaczy();  // dodane ponizej
+            }
+        }
+
+
+        public IEnumerable<Zawody> Zawody
+        {
+            get
+            {
+                return this.zawody;
+            }
+            set
+            {
+                this.zawody = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        private IEnumerable<Biegacz> biegacze;
+        public IEnumerable<Biegacz> Biegacze
+        {
+            get
+            {
+                return this.biegacze;
+            }
+            set
+            {
+                this.biegacze = value;
+                OnPropertyChanged();
+            }
+        }
+
+
 
         public MaintenanceFormViewModel()
         {
@@ -28,21 +72,12 @@ namespace Maratony.UI.ViewModel
         }
 
 
-        public IEnumerable<Zawody> Zawody
-        {
-            get
-            {
-                return this.zawody;
-            }
-            set
-            {
-                this.zawody = value;
-                this.OnPropertyChanged(nameof(Zawody));
-            }
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
+        //private void OnPropertyChanged(string propertyName)
+        private void OnPropertyChanged(
+            [System.Runtime.CompilerServices.CallerMemberName]
+            string propertyName = "")
         {
             /*
                 var handler = this.PropertyChanged;
@@ -56,7 +91,10 @@ namespace Maratony.UI.ViewModel
                     new PropertyChangedEventArgs(propertyName));
         }
 
-       
+
+
+
+
 
         internal void Init()
         {
@@ -78,6 +116,13 @@ namespace Maratony.UI.ViewModel
             model.DodajBiegacza(model.ListaZawodow[1].ID, "Jan", "Kowalski");
             model.DodajBiegacza(model.ListaZawodow[1].ID, "Adam", "Nowak");
         }
+
+        private void OdswiezBiegaczy()
+        {
+            this.Biegacze = null;
+            this.Biegacze = this.WybraneZawody?.Biegacze;
+        }
+
 
     }
 }

@@ -12,6 +12,15 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ComboBox Margin="5" />
+        <ComboBox Margin="5"
+                  ItemsSource="{Binding Path=Zawody}"
+                  DisplayMemberPath="Miejsce"
+                  SelectedItem="{Binding Path=WybraneZawody, Mode=TwoWay}" />
+        <DataGrid Grid.Row="1"
+                  Margin="5"
+                  AutoGenerateColumns="True"
+                  CanUserAddRows="False"
+                  ItemsSource="{Binding Path=Biegacze}"/>
+
     </Grid>
 </Window>
