@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Maratony.UI.ViewModel
 {
@@ -14,6 +15,8 @@ namespace Maratony.UI.ViewModel
 
         private IEnumerable<Zawody> zawody;
         private Zawody wybraneZawody;
+        public ICommand SaveCommand { get; private set; }
+        public ICommand ClearCommand { get; private set; }
         public Zawody WybraneZawody
         {
             get
@@ -100,6 +103,14 @@ namespace Maratony.UI.ViewModel
         {
             this.PrzykladoweDane();
             this.OdswiezZawody();
+            this.SaveCommand = new RelayCommand(
+                 action => this.DodajBiegacza(),
+                 enable => this.CzyMoznaDodacBiegacza());
+            this.ClearCommand = new RelayCommand(
+                 action => this.WyczyscWybraneZawody(),
+                 enable => this.CzyMoznaDodacBiegacza());
+
+
         }
 
         private void OdswiezZawody()
@@ -122,6 +133,26 @@ namespace Maratony.UI.ViewModel
             this.Biegacze = null;
             this.Biegacze = this.WybraneZawody?.Biegacze;
         }
+
+        public void DodajBiegacza()
+        {
+            if (WybraneZawody != null)
+            {
+                model.DodajBiegacza(this.WybraneZawody.ID, "Nowy", "Biegacz");
+                this.OdswiezBiegaczy();
+            }
+        }
+
+        public bool CzyMoznaDodacBiegacza()
+        {
+            return (this.WybraneZawody != null);
+        }
+
+        private void WyczyscWybraneZawody()
+        {
+            this.WybraneZawody = null;
+        }
+
 
 
     }
