@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maratony.Data.Test", "Marat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maratony.FullClient", "Maratony.FullClient\Maratony.FullClient.csproj", "{6F48EC6E-5ABC-4BB7-90ED-543479E30B4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maratony.Ui.Test", "Maratony.Ui.Test\Maratony.Ui.Test.csproj", "{114110DF-78CD-441A-8BA3-2F57E696D1ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6F48EC6E-5ABC-4BB7-90ED-543479E30B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F48EC6E-5ABC-4BB7-90ED-543479E30B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F48EC6E-5ABC-4BB7-90ED-543479E30B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{114110DF-78CD-441A-8BA3-2F57E696D1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{114110DF-78CD-441A-8BA3-2F57E696D1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{114110DF-78CD-441A-8BA3-2F57E696D1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{114110DF-78CD-441A-8BA3-2F57E696D1ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
