@@ -34,7 +34,8 @@
                     Command="{Binding SaveCommand}" />
             <Button Margin="5"
                     Grid.Column="1"
-                    Content="Wyczyść" />
+                    Content="Wyczyść"
+                    Command="{Binding ClearCommand}"/>
         </Grid>
 
     </Grid>
