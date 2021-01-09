@@ -13,10 +13,10 @@ namespace Maratony.UI.ViewModel
     {
         private MaratonyModel model = new MaratonyModel();
 
-        private IEnumerable<Zawody> zawody;
-        private Zawody wybraneZawody;
+        
         public ICommand SaveCommand { get; private set; }
         public ICommand ClearCommand { get; private set; }
+        private Zawody wybraneZawody;
         public Zawody WybraneZawody
         {
             get
@@ -31,7 +31,7 @@ namespace Maratony.UI.ViewModel
             }
         }
 
-
+        private IEnumerable<Zawody> zawody;
         public IEnumerable<Zawody> Zawody
         {
             get
