@@ -125,7 +125,7 @@ namespace Maratony.UI.ViewModel
             model.DodajZawody("Warszawa", new DateTime(2016, 1, 23), 6);
             model.DodajBiegacza(model.ListaZawodow[0].ID, "Młody", "Bóg","Kraków");
             model.DodajBiegacza(model.ListaZawodow[1].ID, "Jan", "Kowalski", "Warszawa");
-            model.DodajBiegacza(model.ListaZawodow[1].ID, "Adam", "Nowak", "Warsdzawa");
+            model.DodajBiegacza(model.ListaZawodow[1].ID, "Adam", "Nowak", "Warszawa");
         }
 
         private void OdswiezBiegaczy()
