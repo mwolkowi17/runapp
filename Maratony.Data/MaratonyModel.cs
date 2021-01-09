@@ -35,12 +35,12 @@ namespace Maratony.Data
             return z;
         }
 
-        public Biegacz DodajBiegacza(long zawodyId, string imie, string nazwisko)
+        public Biegacz DodajBiegacza(long zawodyId, string imie, string nazwisko, string miasto)
         {
             Zawody zawody = listaZawodow.Where(z => (z.ID == zawodyId)).FirstOrDefault();
-            Biegacz b = new Biegacz() { Imie = imie, Nazwisko = nazwisko };
+            Biegacz b = new Biegacz() { Imie = imie, Nazwisko = nazwisko, miejsce= miasto };
             this.listaBiegaczy.Add(b);
-            b.Bieg = zawody;
+           
             zawody.Biegacze.Add(b);
             return b;
         }

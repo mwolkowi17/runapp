@@ -22,7 +22,8 @@ namespace Maratony.Data
 
         public long ID { get; set; }
 
-        public Zawody Bieg { get; set; }
+        //public Zawody Bieg { get; set; }
+        public string miejsce { get; set; }
 
 
 
